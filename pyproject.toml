@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "snaptex"
+version = "0.1.0"
+description = "Turn equation screenshots into LaTeX locally."
+readme = "README.md"
+requires-python = ">=3.10,<3.12"
+license = {text = "MIT"}
+dependencies = [
+  "Pillow>=10.2,<12",
+  "pix2tex>=0.1.4,<0.2",
+]
+
+[project.gui-scripts]
+snaptex = "snaptex.app:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
